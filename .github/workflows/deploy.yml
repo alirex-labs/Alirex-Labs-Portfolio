@@ -1,0 +1,38 @@
+name: Deploy to GitHub Pages
+
+on:
+  # 'main' ブランチへのプッシュ時に自動デプロイが走ります。
+  push:
+    branches: [ main ]
+  # GitHub Actions タブから手動で実行できるようにする設定
+  workflow_dispatch:
+
+# GitHub Pages へのデプロイに必要な権限を付与
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+        
+      - name: Install, build, and upload your site
+        uses: withastro/action@v3
+        with:
+          # 最新のAstro(v5)に対応するためNode.js v22を指定
+          node-version: 22 
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
