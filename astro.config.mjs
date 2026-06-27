@@ -9,7 +9,7 @@ export default defineConfig({
 	base: '/Alirex-Labs-Portfolio',                  
 	integrations: [
 		starlight({
-			title: 'Alirex Labs Portfolio',
+			title: 'Alirex Labs.',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/alirex-labs-2022/Alirex-Labs-Portfolio' }],
 			sidebar: [
 				{
