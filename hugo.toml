@@ -1,0 +1,30 @@
+baseURL = 'https://alirex-labs.github.io/Alirex-Labs-Portfolio/'
+languageCode = 'ja'
+title = 'Alirex Labs.'
+
+[[module.imports]]
+path = "github.com/imfing/hextra"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[params]
+description = "Alirex AI Labs Portfolio and Blog"
+
+[params.navbar]
+displayTitle = true
+displayLogo = true
+[params.navbar.logo]
+path = "logo.png"
+width = 32
+height = 32
+
+[[menu.main]]
+name = "Products"
+weight = 1
+url = "/docs/products/"
+
+[[menu.main]]
+name = "Blog"
+weight = 2
+url = "/blog/"
