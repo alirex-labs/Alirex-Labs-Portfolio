@@ -22,9 +22,9 @@ height = 32
 [[menu.main]]
 name = "Products"
 weight = 1
-url = "/Alirex-Labs-Portfolio/docs/products/"
+pageRef = "/docs/products"
 
 [[menu.main]]
 name = "Blog"
 weight = 2
-url = "/Alirex-Labs-Portfolio/blog/"
+pageRef = "/blog"
